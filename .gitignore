@@ -4,6 +4,7 @@
 # ========== WHITELIST: разрешённые файлы ==========
 
 # Конфигурация проекта
+!PROVERKA
 !.dockerignore
 !.env.example
 !.gitignore
