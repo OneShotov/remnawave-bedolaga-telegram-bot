@@ -56,7 +56,7 @@ class TelegramStarsMixin:
                 raise ValueError('Stars amount must be positive')
 
             invoice_link = await self.bot.create_invoice_link(
-                title='Пополнение баланса VPN',
+                title='Пополнение баланса',
                 description=f'{description} (≈{stars_amount} ⭐)',
                 payload=payload or f'balance_topup_{amount_kopeks}',
                 provider_token='',

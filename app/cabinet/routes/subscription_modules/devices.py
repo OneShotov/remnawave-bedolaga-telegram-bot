@@ -1122,7 +1122,7 @@ async def reduce_devices(
         )
         raise HTTPException(
             status_code=status.HTTP_502_BAD_GATEWAY,
-            detail='Не удалось обновить VPN-панель. Попробуйте позже.',
+            detail='Не удалось обновить панель. Попробуйте позже.',
         )
 
     logger.info(

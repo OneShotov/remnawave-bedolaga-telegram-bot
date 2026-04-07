@@ -1151,7 +1151,7 @@ class RemnaWaveWebhookService:
 
         Called when a user.deleted webhook arrives but the subscription still has a
         future end_date, indicating the deletion was likely spurious (e.g., RemnaWave
-        resync when modifying another user). Attempts to restore VPN access by
+        resync when modifying another user). Attempts to restore access by
         creating/updating the user in the panel.
 
         Returns True if recreation succeeded, False otherwise.
@@ -1293,7 +1293,7 @@ class RemnaWaveWebhookService:
     async def _handle_first_connected(
         self, db: AsyncSession, user: User, subscription: Subscription | None, data: dict
     ) -> None:
-        logger.info('Webhook: user first VPN connection', user_id=user.id)
+        logger.info('Webhook: user first connection', user_id=user.id)
         await self._notify_user(
             user,
             'WEBHOOK_SUB_FIRST_CONNECTED',
@@ -1329,7 +1329,7 @@ class RemnaWaveWebhookService:
         meta = data.get('_meta') or {}
         hours = meta.get('notConnectedAfterHours')
         logger.info(
-            'Webhook: user has not connected to VPN',
+            'Webhook: user has not connected',
             user_id=user.id,
             not_connected_after_hours=hours,
         )

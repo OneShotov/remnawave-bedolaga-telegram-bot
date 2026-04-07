@@ -240,7 +240,7 @@ async def show_subscription_info(callback: types.CallbackQuery, db_user: User, d
     elif subscription.status == 'active' and subscription.end_date > current_time:
         if subscription.is_trial:
             actual_status = 'trial_active'
-            status_display = texts.t('SUBSCRIPTION_STATUS_TRIAL', 'Тестовая')
+            status_display = texts.t('SUBSCRIPTION_STATUS_TRIAL', 'Пробная')
             status_emoji = '🎯'
         else:
             actual_status = 'paid_active'
@@ -578,7 +578,7 @@ async def show_subscription_info(callback: types.CallbackQuery, db_user: User, d
         ).format(subscription_url=subscription_link_display)
         message += '\n\n' + texts.t(
             'SUBSCRIPTION_CONNECT_LINK_PROMPT',
-            '📱 Скопируйте ссылку и добавьте в ваше VPN приложение',
+            '📱 Скопируйте данные доступа и используйте их для подключения',
         )
 
     await callback.message.edit_text(
@@ -1123,7 +1123,7 @@ async def activate_trial(callback: types.CallbackQuery, db_user: User, db: Async
                     + '\n\n'
                     + texts.t(
                         'SUBSCRIPTION_IMPORT_INSTRUCTION_PROMPT',
-                        '📱 Нажмите кнопку ниже, чтобы получить инструкцию по настройке VPN на вашем устройстве',
+                        '📱 Нажмите кнопку ниже, чтобы открыть инструкцию по подключению',
                     )
                 )
             elif hide_subscription_link:
@@ -1136,19 +1136,19 @@ async def activate_trial(callback: types.CallbackQuery, db_user: User, db: Async
                     + '\n\n'
                     + texts.t(
                         'SUBSCRIPTION_IMPORT_INSTRUCTION_PROMPT',
-                        '📱 Нажмите кнопку ниже, чтобы получить инструкцию по настройке VPN на вашем устройстве',
+			'📱 Нажмите кнопку ниже, чтобы открыть инструкцию по подключению',
                     )
                 )
             else:
                 subscription_import_link = texts.t(
                     'SUBSCRIPTION_IMPORT_LINK_SECTION',
-                    '🔗 <b>Ваша ссылка для импорта в VPN приложение:</b>\n<code>{subscription_url}</code>',
+                    '🔗 <b>Ваши данные для подключения:</b>\n<code>{subscription_url}</code>',
                 ).format(subscription_url=subscription_link)
 
                 trial_success_text = (
                     f'{texts.TRIAL_ACTIVATED}\n\n'
                     f'{subscription_import_link}\n\n'
-                    f'{texts.t("SUBSCRIPTION_IMPORT_INSTRUCTION_PROMPT", "📱 Нажмите кнопку ниже, чтобы получить инструкцию по настройке VPN на вашем устройстве")}'
+		    f'texts.t("SUBSCRIPTION_IMPORT_INSTRUCTION_PROMPT", "📱 Нажмите кнопку ниже, чтобы открыть инструкцию по подключению")'
                 )
 
             trial_success_text += payment_note
@@ -1637,7 +1637,7 @@ async def handle_extend_subscription(
 
     if not subscription:
         await callback.message.edit_text(
-            '🎯 <b>Пробный период заканчивается</b>\n\nЧтобы продолжить пользоваться VPN, выберите подходящий тариф.',
+            '🎯 <b>Пробный период заканчивается</b>\n\nЧтобы продолжить пользоваться сервисом, выберите подходящий тариф.',
             reply_markup=types.InlineKeyboardMarkup(
                 inline_keyboard=[
                     [types.InlineKeyboardButton(text=texts.MENU_BUY_SUBSCRIPTION, callback_data='menu_buy')],
@@ -1663,7 +1663,7 @@ async def handle_extend_subscription(
             return
         # Триал без тарифа — предлагаем выбрать
         await callback.message.edit_text(
-            '🎯 <b>Пробный период заканчивается</b>\n\nЧтобы продолжить пользоваться VPN, выберите подходящий тариф.',
+            '🎯 <b>Пробный период заканчивается</b>\n\nЧтобы продолжить пользоваться сервисом, выберите подходящий тариф.',
             reply_markup=types.InlineKeyboardMarkup(
                 inline_keyboard=[
                     [types.InlineKeyboardButton(text=texts.MENU_BUY_SUBSCRIPTION, callback_data='menu_buy')],
@@ -2663,7 +2663,7 @@ async def confirm_purchase(callback: types.CallbackQuery, state: FSMContext, db_
                     + '\n\n'
                     + texts.t(
                         'SUBSCRIPTION_IMPORT_INSTRUCTION_PROMPT',
-                        '📱 Нажмите кнопку ниже, чтобы получить инструкцию по настройке VPN на вашем устройстве',
+			'📱 Нажмите кнопку ниже, чтобы открыть инструкцию по подключению',
                     )
                 )
             elif hide_subscription_link:
@@ -2676,19 +2676,19 @@ async def confirm_purchase(callback: types.CallbackQuery, state: FSMContext, db_
                     + '\n\n'
                     + texts.t(
                         'SUBSCRIPTION_IMPORT_INSTRUCTION_PROMPT',
-                        '📱 Нажмите кнопку ниже, чтобы получить инструкцию по настройке VPN на вашем устройстве',
+			'📱 Нажмите кнопку ниже, чтобы открыть инструкцию по подключению',
                     )
                 )
             else:
                 import_link_section = texts.t(
                     'SUBSCRIPTION_IMPORT_LINK_SECTION',
-                    '🔗 <b>Ваша ссылка для импорта в VPN приложение:</b>\\n<code>{subscription_url}</code>',
+                    '🔗 <b>Ваши данные для подключения:</b>\\n<code>{subscription_url}</code>',
                 ).format(subscription_url=subscription_link)
 
                 success_text = (
                     f'{texts.SUBSCRIPTION_PURCHASED}\n\n'
                     f'{import_link_section}\n\n'
-                    f'{texts.t("SUBSCRIPTION_IMPORT_INSTRUCTION_PROMPT", "📱 Нажмите кнопку ниже, чтобы получить инструкцию по настройке VPN на вашем устройстве")}'
+		    f'texts.t("SUBSCRIPTION_IMPORT_INSTRUCTION_PROMPT", "📱 Нажмите кнопку ниже, чтобы открыть инструкцию по подключению")'
                 )
 
             if discount_note:
@@ -3406,7 +3406,7 @@ async def handle_trial_pay_with_balance(callback: types.CallbackQuery, db_user: 
                     + '\n\n'
                     + texts.t(
                         'SUBSCRIPTION_IMPORT_INSTRUCTION_PROMPT',
-                        '📱 Нажмите кнопку ниже, чтобы получить инструкцию по настройке VPN на вашем устройстве',
+			'📱 Нажмите кнопку ниже, чтобы открыть инструкцию по подключению',
                     )
                 )
             elif hide_subscription_link:
@@ -3419,19 +3419,19 @@ async def handle_trial_pay_with_balance(callback: types.CallbackQuery, db_user: 
                     + '\n\n'
                     + texts.t(
                         'SUBSCRIPTION_IMPORT_INSTRUCTION_PROMPT',
-                        '📱 Нажмите кнопку ниже, чтобы получить инструкцию по настройке VPN на вашем устройстве',
+			'📱 Нажмите кнопку ниже, чтобы открыть инструкцию по подключению',
                     )
                 )
             else:
                 subscription_import_link = texts.t(
                     'SUBSCRIPTION_IMPORT_LINK_SECTION',
-                    '🔗 <b>Ваша ссылка для импорта в VPN приложение:</b>\n<code>{subscription_url}</code>',
+                    '🔗 <b>Ваши данные для подключения:</b>\n<code>{subscription_url}</code>',
                 ).format(subscription_url=subscription_link)
 
                 trial_success_text = (
                     f'{texts.TRIAL_ACTIVATED}\n\n'
                     f'{subscription_import_link}\n\n'
-                    f'{texts.t("SUBSCRIPTION_IMPORT_INSTRUCTION_PROMPT", "📱 Нажмите кнопку ниже, чтобы получить инструкцию по настройке VPN на вашем устройстве")}'
+		    f'texts.t("SUBSCRIPTION_IMPORT_INSTRUCTION_PROMPT", "📱 Нажмите кнопку ниже, чтобы открыть инструкцию по подключению")'
                 )
 
             trial_success_text += payment_note

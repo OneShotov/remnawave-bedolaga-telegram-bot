@@ -330,7 +330,7 @@ async def handle_open_subscription_link(
                 ),
                 texts.t(
                     'SUBSCRIPTION_LINK_STEP2',
-                    '2. Откройте ваше VPN приложение',
+                    '2. Откройте приложение и добавьте данные подключения',
                 ),
                 texts.t(
                     'SUBSCRIPTION_LINK_STEP3',

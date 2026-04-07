@@ -224,7 +224,7 @@ async def get_public_offer(
 async def get_service_info():
     """Get general service information."""
     return ServiceInfoResponse(
-        name=getattr(settings, 'SERVICE_NAME', None) or getattr(settings, 'BOT_NAME', 'VPN Service'),
+        name=getattr(settings, 'SERVICE_NAME', None) or getattr(settings, 'BOT_NAME', 'h0pp'),
         description=getattr(settings, 'SERVICE_DESCRIPTION', None),
         support_email=getattr(settings, 'SUPPORT_EMAIL', None),
         support_telegram=getattr(settings, 'SUPPORT_USERNAME', None) or getattr(settings, 'SUPPORT_TELEGRAM', None),

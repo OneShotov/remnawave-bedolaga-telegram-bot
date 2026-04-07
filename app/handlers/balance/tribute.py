@@ -47,7 +47,7 @@ async def start_tribute_payment(
         payment_url = await tribute_service.create_payment_link(
             user_id=db_user.telegram_id,
             amount_kopeks=0,
-            description='Пополнение баланса VPN',
+            description='Пополнение баланса',
         )
 
         if not payment_url:

@@ -188,7 +188,7 @@ def format_subscription_status(is_active: bool, is_trial: bool, end_date: dateti
         return '❌ Неактивна' if use_russian_fallback else '❌ Inactive'
 
     if is_trial:
-        status = '🎁 Тестовая' if use_russian_fallback else '🎁 Trial'
+        status = '🎁 Пробная' if use_russian_fallback else '🎁 Trial'
     else:
         status = '✅ Активна' if use_russian_fallback else '✅ Active'
 

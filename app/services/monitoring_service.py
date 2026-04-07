@@ -1552,11 +1552,11 @@ class MonitoringService:
             if settings.is_multi_tariff_enabled() and hasattr(subscription, 'tariff') and subscription.tariff:
                 tariff_label = f' «{subscription.tariff.name}»'
             message = f"""
-🎁 <b>Тестовая подписка{tariff_label} скоро закончится!</b>
+🎁 <b>Пробная подписка{tariff_label} скоро закончится!</b>
 
 Ваша тестовая подписка истекает через 2 часа.
 
-💎 <b>Не хотите остаться без VPN?</b>
+💎 <b>Не хотите остаться без доступа?</b>
 Переходите на полную подписку!
 
 ⚡️ Успейте оформить до окончания тестового периода!

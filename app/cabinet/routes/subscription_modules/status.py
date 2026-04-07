@@ -167,7 +167,7 @@ async def get_connection_link(
         'instructions': {
             'steps': [
                 'Copy the subscription link',
-                'Open your VPN application',
+                'Open your application',
                 "Find 'Add subscription' or 'Import' option",
                 'Paste the copied link',
             ]

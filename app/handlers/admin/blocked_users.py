@@ -76,7 +76,7 @@ class BlockedUsersText(Enum):
         '• Реферальные данные'
     )
     CLEANUP_CONFIRM_DELETE_REMNAWAVE = (
-        'Вы собираетесь <b>удалить из Remnawave</b> {count} пользователей.\nИх VPN доступ будет полностью отключен.'
+        'Вы собираетесь <b>удалить из Remnawave</b> {count} пользователей.\nИх доступ будет полностью отключен.'
     )
     CLEANUP_CONFIRM_DELETE_BOTH = (
         'Вы собираетесь <b>полностью удалить</b> {count} пользователей:\n'

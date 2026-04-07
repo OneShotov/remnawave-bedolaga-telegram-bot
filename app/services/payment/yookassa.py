@@ -704,7 +704,7 @@ class YooKassaPaymentMixin:
                                                 f'💳 Оплачено: {settings.format_price(payment.amount_kopeks)}\n'
                                                 f'📅 Период: {settings.TRIAL_DURATION_DAYS} дней\n'
                                                 f'📱 Устройств: {subscription.device_limit}\n\n'
-                                                f'Используйте меню для подключения к VPN.'
+                                                f'Используйте меню для подключения.'
                                             ),
                                             parse_mode='HTML',
                                         )

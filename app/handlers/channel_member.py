@@ -40,7 +40,7 @@ async def _is_required_channel(channel_id: str) -> bool:
 
 @router.chat_member(ChatMemberUpdatedFilter(member_status_changed=IS_NOT_MEMBER >> IS_MEMBER))
 async def on_user_joined_channel(event: ChatMemberUpdated, bot: Bot) -> None:
-    """User subscribed to a channel -- update cache and reactivate VPN if applicable."""
+    """User subscribed to a channel -- update cache and reactivate access if applicable."""
     user = event.new_chat_member.user
     channel_id = str(event.chat.id)  # Normalize int to str (DB stores string)
 
@@ -125,7 +125,7 @@ async def on_user_joined_channel(event: ChatMemberUpdated, bot: Bot) -> None:
 
 @router.chat_member(ChatMemberUpdatedFilter(member_status_changed=IS_MEMBER >> IS_NOT_MEMBER))
 async def on_user_left_channel(event: ChatMemberUpdated, bot: Bot) -> None:
-    """User unsubscribed from a channel -- update cache and deactivate VPN if applicable."""
+    """User unsubscribed from a channel -- update cache and deactivate access if applicable."""
     user = event.old_chat_member.user
     channel_id = str(event.chat.id)  # Normalize int to str (DB stores string)
 

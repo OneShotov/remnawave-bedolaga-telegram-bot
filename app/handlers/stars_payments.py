@@ -275,7 +275,7 @@ async def _handle_trial_payment(
             f'⭐ Потрачено: {stars_amount} Stars\n'
             f'📅 Период: {settings.TRIAL_DURATION_DAYS} дней\n'
             f'📱 Устройств: {subscription.device_limit}\n\n'
-            f'Используйте меню для подключения к VPN.',
+            f'Используйте меню для подключения к сервису.',
             parse_mode='HTML',
         )
 

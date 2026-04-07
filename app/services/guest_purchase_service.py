@@ -224,7 +224,7 @@ async def _create_nalogo_receipt_for_purchase(
             return
 
         amount_rubles = purchase.amount_kopeks / 100
-        # Не передаём telegram_user_id в описание чека — privacy (VPN-сервис)
+        # Не передаём telegram_user_id в описание чека — privacy (service)
         receipt_name = settings.get_balance_payment_description(purchase.amount_kopeks)
 
         receipt_uuid = await nalogo_service.create_receipt(
@@ -792,7 +792,7 @@ async def _send_telegram_gift_notification(
         period_text = f'{purchase.period_days} дн.' if purchase.period_days else ''
         tariff_text = f'{safe_tariff} — {period_text}' if safe_tariff else period_text
 
-        text = f'🎁 <b>Вам подарили VPN подписку!</b>\n{tariff_text}{gift_from}{gift_msg}'
+        text = f'🎁 <b>Вам подарили доступ!</b>\n{tariff_text}{gift_from}{gift_msg}'
 
         keyboard = None
         if is_pending_activation:

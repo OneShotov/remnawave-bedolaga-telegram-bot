@@ -1470,14 +1470,14 @@ class Subscription(Base):
             return '🔴 Истекла'
         if actual_status == 'active':
             if self.is_trial:
-                return '🎯 Тестовая'
+                return '🎯 Пробная'
             return '🟢 Активна'
         if actual_status == 'disabled':
             return '⚫ Отключена'
         if actual_status == 'limited':
             return '⚠️ Трафик исчерпан'
         if actual_status == 'trial':
-            return '🎯 Тестовая'
+            return '🎯 Пробная'
 
         return '❓ Неизвестно'
 

@@ -392,7 +392,7 @@ class Settings(BaseSettings):
     ACTIVATE_BUTTON_VISIBLE: bool = False
     ACTIVATE_BUTTON_TEXT: str = 'активировать'
     PAYMENT_BALANCE_DESCRIPTION: str = 'Пополнение баланса'
-    PAYMENT_SUBSCRIPTION_DESCRIPTION: str = 'Оплата подписки'
+    PAYMENT_SUBSCRIPTION_DESCRIPTION: str = 'Оплата доступа'
     PAYMENT_SERVICE_NAME: str = 'Интернет-сервис'
     PAYMENT_BALANCE_TEMPLATE: str = '{service_name} - {description}'
     PAYMENT_SUBSCRIPTION_TEMPLATE: str = '{service_name} - {description}'
@@ -600,8 +600,8 @@ class Settings(BaseSettings):
     MEDIA_IMAGE_MAX_DIMENSION: int = 2048
     MEDIA_JPEG_QUALITY: int = 85
     MINIAPP_PURCHASE_URL: str = ''
-    MINIAPP_SERVICE_NAME_EN: str = 'Bedolaga VPN'
-    MINIAPP_SERVICE_NAME_RU: str = 'Bedolaga VPN'
+    MINIAPP_SERVICE_NAME_EN: str = 'h0pp'
+    MINIAPP_SERVICE_NAME_RU: str = 'h0pp'
     MINIAPP_SERVICE_DESCRIPTION_EN: str = 'Secure & Fast Connection'
     MINIAPP_SERVICE_DESCRIPTION_RU: str = 'Безопасное и быстрое подключение'
     CONNECT_BUTTON_HAPP_DOWNLOAD_ENABLED: bool = False
@@ -613,7 +613,7 @@ class Settings(BaseSettings):
     HAPP_DOWNLOAD_LINK_PC: str | None = None
     HIDE_SUBSCRIPTION_LINK: bool = False
     ENABLE_LOGO_MODE: bool = True
-    LOGO_FILE: str = 'vpn_logo.png'
+    LOGO_FILE: str = 'logo.png'
     SKIP_RULES_ACCEPT: bool = False
     SKIP_REFERRAL_CODE: bool = False
 
@@ -659,7 +659,7 @@ class Settings(BaseSettings):
         '└ ⏱ Время блокировки: <b>{ban_minutes} мин</b>\n\n'
         '━━━━━━━━━━━━━━━━━━━━━\n'
         '💡 <b>Что делать:</b>\n'
-        '1. Отключите лишние устройства от VPN\n'
+        '1. Отключите лишние устройства\n'
         '2. Дождитесь окончания блокировки\n'
         '3. Подключитесь заново\n\n'
         '🔄 Доступ восстановится автоматически'
@@ -670,11 +670,11 @@ class Settings(BaseSettings):
         '✅ <b>АККАУНТ РАЗБЛОКИРОВАН</b>\n'
         '━━━━━━━━━━━━━━━━━━━━━\n\n'
         '🎉 Ваш аккаунт успешно разблокирован!\n\n'
-        'Теперь вы можете снова пользоваться VPN.\n\n'
+        'Теперь вы можете снова пользоваться сервисом.\n\n'
         '━━━━━━━━━━━━━━━━━━━━━\n'
         '⚠️ <b>Рекомендации:</b>\n'
         '• Следите за количеством устройств\n'
-        '• Отключайте VPN когда не используете\n'
+        '• Отключайте подключение, когда не используете\n'
         '• Не превышайте лимит по тарифу'
     )
 
@@ -712,7 +712,7 @@ class Settings(BaseSettings):
         '💡 <b>Что делать:</b>\n'
         '1. Подключитесь к WiFi\n'
         '2. Дождитесь окончания блокировки\n'
-        '3. Используйте VPN только через WiFi\n\n'
+        '3. Используйте подключение через WiFi\n\n'
         '🔄 Доступ восстановится автоматически'
     )
 
@@ -812,7 +812,7 @@ class Settings(BaseSettings):
     SMTP_USER: str | None = None
     SMTP_PASSWORD: str | None = None
     SMTP_FROM_EMAIL: str | None = None
-    SMTP_FROM_NAME: str = 'VPN Service'
+    SMTP_FROM_NAME: str = 'h0pp'
     SMTP_USE_TLS: bool = True
 
     # Ban System Integration (BedolagaBan monitoring)
@@ -1546,7 +1546,7 @@ class Settings(BaseSettings):
         desc_en = _clean(self.MINIAPP_SERVICE_DESCRIPTION_EN)
         desc_ru = _clean(self.MINIAPP_SERVICE_DESCRIPTION_RU)
 
-        default_name = name_en or name_ru or 'RemnaWave VPN'
+        default_name = name_en or name_ru or 'h0pp'
         default_description = desc_en or desc_ru or 'Secure & Fast Connection'
 
         return {

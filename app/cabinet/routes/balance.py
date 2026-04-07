@@ -274,7 +274,7 @@ async def create_stars_invoice(
 
         async with create_bot() as bot:
             invoice_url = await bot.create_invoice_link(
-                title='Пополнение баланса VPN',
+                title='Пополнение баланса',
                 description=f'Пополнение баланса на {normalized_kopeks / 100:.2f} ₽ ({stars_amount} ⭐)',
                 payload=payload,
                 provider_token='',

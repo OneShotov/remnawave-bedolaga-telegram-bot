@@ -687,7 +687,7 @@ class BotConfigurationService:
             'description': 'Базовый адрес панели RemnaWave, с которой синхронизируется бот.',
             'format': 'Полный URL вида https://panel.example.com.',
             'example': 'https://panel.remnawave.net',
-            'warning': 'Недоступный адрес приведет к ошибкам при управлении VPN-учетками.',
+            'warning': 'Недоступный адрес приведет к ошибкам при управлении учетными записями.',
             'dependencies': 'REMNAWAVE_API_KEY или REMNAWAVE_USERNAME/REMNAWAVE_PASSWORD',
         },
         'REMNAWAVE_AUTO_SYNC_ENABLED': {
@@ -720,7 +720,7 @@ class BotConfigurationService:
                 'Шаблон имени пользователя, которое создаётся в панели RemnaWave для телеграм-пользователя.'
             ),
             'format': ('Доступные плейсхолдеры: {full_name}, {username}, {username_clean}, {telegram_id}.'),
-            'example': 'vpn_{username_clean}_{telegram_id}',
+            'example': 'user_{username_clean}_{telegram_id}',
             'warning': (
                 'Недопустимые символы автоматически заменяются на подчёркивания. '
                 'Если результат пустой, используется user_{telegram_id}.'
@@ -925,12 +925,12 @@ class BotConfigurationService:
             'example': 'true',
         },
         'WEBHOOK_NOTIFY_FIRST_CONNECTED': {
-            'description': 'Уведомление при первом подключении к VPN.',
+            'description': 'Уведомление при первом подключении к сервису.',
             'format': 'Булево значение.',
             'example': 'true',
         },
         'WEBHOOK_NOTIFY_NOT_CONNECTED': {
-            'description': 'Напоминание, что пользователь ещё не подключился к VPN.',
+            'description': 'Напоминание, что пользователь ещё не подключился к сервису.',
             'format': 'Булево значение.',
             'example': 'true',
         },

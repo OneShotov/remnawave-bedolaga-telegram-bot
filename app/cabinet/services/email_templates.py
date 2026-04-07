@@ -14,7 +14,7 @@ class EmailNotificationTemplates:
     """HTML email templates for user notifications."""
 
     def __init__(self):
-        self.service_name = settings.SMTP_FROM_NAME or 'VPN Service'
+        self.service_name = settings.SMTP_FROM_NAME or 'h0pp'
         self.cabinet_url = getattr(settings, 'CABINET_URL', '')
 
     def get_template(
@@ -436,7 +436,7 @@ class EmailNotificationTemplates:
                 <h2>Подписка истекла</h2>
                 <div class="highlight danger">
                     {tariff_line_ru}
-                    <p>Ваша подписка истекла. Доступ к VPN отключён.</p>
+                    <p>Ваша подписка истекла. Доступ отключён.</p>
                 </div>
                 <p>Оформите новую подписку, чтобы продолжить использование сервиса.</p>
                 {self._get_cabinet_button(language)}
@@ -445,7 +445,7 @@ class EmailNotificationTemplates:
                 <h2>Subscription Expired</h2>
                 <div class="highlight danger">
                     {tariff_line_en}
-                    <p>Your subscription has expired. VPN access has been disabled.</p>
+                    <p>Your subscription has expired. Access has been disabled.</p>
                 </div>
                 <p>Purchase a new subscription to continue using our service.</p>
                 {self._get_cabinet_button(language)}
@@ -454,7 +454,7 @@ class EmailNotificationTemplates:
                 <h2>订阅已到期</h2>
                 <div class="highlight danger">
                     {tariff_line_zh}
-                    <p>您的订阅已到期。VPN访问已被禁用。</p>
+                    <p>您的订阅已到期。访问已被停用。</p>
                 </div>
                 <p>请购买新订阅以继续使用我们的服务。</p>
                 {self._get_cabinet_button(language)}
@@ -463,7 +463,7 @@ class EmailNotificationTemplates:
                 <h2>Підписка закінчилась</h2>
                 <div class="highlight danger">
                     {tariff_line_ua}
-                    <p>Ваша підписка закінчилась. Доступ до VPN вимкнено.</p>
+                    <p>Ваша підписка закінчилась. Доступ вимкнено.</p>
                 </div>
                 <p>Оформіть нову підписку, щоб продовжити використання сервісу.</p>
                 {self._get_cabinet_button(language)}
@@ -540,20 +540,20 @@ class EmailNotificationTemplates:
                 <h2>Подписка активирована!</h2>
                 <div class="highlight success">
                     {tariff_line_ru}
-                    <p>Ваша VPN подписка успешно активирована.</p>
+                    <p>Ваша подписка успешно активирована.</p>
                     <p>Действует до: <strong>{expires_at}</strong></p>
                 </div>
-                <p>Теперь вы можете пользоваться VPN сервисом.</p>
+                <p>Теперь вы можете пользоваться сервисом.</p>
                 {self._get_cabinet_button(language)}
             """,
             'en': f"""
                 <h2>Subscription Activated!</h2>
                 <div class="highlight success">
                     {tariff_line_en}
-                    <p>Your VPN subscription has been successfully activated.</p>
+                    <p>Your subscription has been successfully activated.</p>
                     <p>Valid until: <strong>{expires_at}</strong></p>
                 </div>
-                <p>You can now use the VPN service.</p>
+                <p>You can now use the service.</p>
                 {self._get_cabinet_button(language)}
             """,
         }
@@ -770,14 +770,14 @@ class EmailNotificationTemplates:
             'ru': f"""
                 <h2>Трафик обновлён</h2>
                 <div class="highlight success">
-                    <p>Ваш трафик был сброшен. Вы можете продолжить использование VPN.</p>
+                    <p>Ваш трафик был сброшен. Вы можете продолжить использование сервиса.</p>
                 </div>
                 {self._get_cabinet_button(language)}
             """,
             'en': f"""
                 <h2>Traffic Reset</h2>
                 <div class="highlight success">
-                    <p>Your traffic has been reset. You can continue using the VPN.</p>
+                    <p>Your traffic has been reset. You can continue using the service.</p>
                 </div>
                 {self._get_cabinet_button(language)}
             """,
@@ -1414,11 +1414,11 @@ class EmailNotificationTemplates:
         cabinet_password = context.get('cabinet_password', '')
 
         subjects = {
-            'ru': 'Ваша VPN подписка готова',
-            'en': 'Your VPN subscription is ready',
-            'zh': '您的VPN订阅已准备就绪',
-            'ua': 'Ваша VPN підписка готова',
-            'fa': 'اشتراک VPN شما آماده است',
+            'ru': 'Ваша подписка готова',
+            'en': 'Your subscription is ready',
+            'zh': '您的订阅已准备就绪',
+            'ua': 'Ваша підписка готова',
+            'fa': 'اشتراک شما آماده است',
         }
 
         creds_block_ru = (
@@ -1483,7 +1483,7 @@ class EmailNotificationTemplates:
 
         bodies = {
             'ru': f"""
-                <h2>Ваша VPN подписка готова!</h2>
+                <h2>Ваша подписка готова!</h2>
                 <div class="highlight success">
                     <p>Тариф: <strong>{tariff_name}</strong></p>
                     <p>Период: <strong>{period_days} дней</strong></p>
@@ -1493,7 +1493,7 @@ class EmailNotificationTemplates:
                 <p style="text-align: center;"><a href="{cabinet_url}" class="button">Перейти в личный кабинет</a></p>
             """,
             'en': f"""
-                <h2>Your VPN subscription is ready!</h2>
+                <h2>Your subscription is ready!</h2>
                 <div class="highlight success">
                     <p>Plan: <strong>{tariff_name}</strong></p>
                     <p>Period: <strong>{period_days} days</strong></p>
@@ -1503,7 +1503,7 @@ class EmailNotificationTemplates:
                 <p style="text-align: center;"><a href="{cabinet_url}" class="button">Go to Cabinet</a></p>
             """,
             'zh': f"""
-                <h2>您的VPN订阅已准备就绪！</h2>
+                <h2>您的订阅已准备就绪！</h2>
                 <div class="highlight success">
                     <p>套餐: <strong>{tariff_name}</strong></p>
                     <p>期限: <strong>{period_days} 天</strong></p>
@@ -1513,7 +1513,7 @@ class EmailNotificationTemplates:
                 <p style="text-align: center;"><a href="{cabinet_url}" class="button">前往个人中心</a></p>
             """,
             'ua': f"""
-                <h2>Ваша VPN підписка готова!</h2>
+                <h2>Ваша підписка готова!</h2>
                 <div class="highlight success">
                     <p>Тариф: <strong>{tariff_name}</strong></p>
                     <p>Період: <strong>{period_days} днів</strong></p>
@@ -1523,7 +1523,7 @@ class EmailNotificationTemplates:
                 <p style="text-align: center;"><a href="{cabinet_url}" class="button">Перейти до кабінету</a></p>
             """,
             'fa': f"""
-                <h2>اشتراک VPN شما آماده است!</h2>
+                <h2>اشتراک شما آماده است!</h2>
                 <div class="highlight success">
                     <p>طرح: <strong>{tariff_name}</strong></p>
                     <p>مدت: <strong>{period_days} روز</strong></p>
@@ -1696,16 +1696,16 @@ class EmailNotificationTemplates:
             gift_block_fa = f'<div class="highlight"><p><em>پیام: {escaped_msg}</em></p></div>'
 
         subjects = {
-            'ru': 'Вам подарили VPN подписку!',
-            'en': "You've been gifted a VPN subscription!",
-            'zh': '您收到了VPN订阅礼物！',
-            'ua': 'Вам подарували VPN підписку!',
-            'fa': 'یک اشتراک VPN به شما هدیه داده شده است!',
+            'ru': 'Вам подарили подписку!',
+            'en': "You've been gifted a subscription!",
+            'zh': '您收到了订阅礼物！',
+            'ua': 'Вам подарували підписку!',
+            'fa': 'یک اشتراک به شما هدیه داده شده است!',
         }
 
         bodies = {
             'ru': f"""
-                <h2>Вам подарили VPN подписку!</h2>
+                <h2>Вам подарили подписку!</h2>
                 {gift_block_ru}
                 <div class="highlight success">
                     <p>Тариф: <strong>{tariff_name}</strong></p>
@@ -1716,7 +1716,7 @@ class EmailNotificationTemplates:
                 <p style="text-align: center;"><a href="{cabinet_url}" class="button">Перейти в личный кабинет</a></p>
             """,
             'en': f"""
-                <h2>You've been gifted a VPN subscription!</h2>
+                <h2>You've been gifted a subscription!</h2>
                 {gift_block_en}
                 <div class="highlight success">
                     <p>Plan: <strong>{tariff_name}</strong></p>
@@ -1727,7 +1727,7 @@ class EmailNotificationTemplates:
                 <p style="text-align: center;"><a href="{cabinet_url}" class="button">Go to Cabinet</a></p>
             """,
             'zh': f"""
-                <h2>您收到了VPN订阅礼物！</h2>
+                <h2>您收到了订阅礼物！</h2>
                 {gift_block_zh}
                 <div class="highlight success">
                     <p>套餐: <strong>{tariff_name}</strong></p>
@@ -1738,7 +1738,7 @@ class EmailNotificationTemplates:
                 <p style="text-align: center;"><a href="{cabinet_url}" class="button">前往个人中心</a></p>
             """,
             'ua': f"""
-                <h2>Вам подарували VPN підписку!</h2>
+                <h2>Вам подарували підписку!</h2>
                 {gift_block_ua}
                 <div class="highlight success">
                     <p>Тариф: <strong>{tariff_name}</strong></p>
@@ -1749,7 +1749,7 @@ class EmailNotificationTemplates:
                 <p style="text-align: center;"><a href="{cabinet_url}" class="button">Перейти до кабінету</a></p>
             """,
             'fa': f"""
-                <h2>یک اشتراک VPN به شما هدیه داده شده است!</h2>
+                <h2>یک اشتراک به شما هدیه داده شده است!</h2>
                 {gift_block_fa}
                 <div class="highlight success">
                     <p>طرح: <strong>{tariff_name}</strong></p>

@@ -152,7 +152,7 @@ async def test_create_stars_invoice_calculates_stars(monkeypatch: pytest.MonkeyP
     assert result == 'https://t.me/invoice/stars'
     assert len(bot.calls) == 1
     call = bot.calls[0]
-    assert call['title'] == 'Пополнение баланса VPN'
+    assert call['title'] == 'Пополнение баланса'
     assert call['payload'] == 'custom_payload'
     prices = call['prices']
     assert len(prices) == 1

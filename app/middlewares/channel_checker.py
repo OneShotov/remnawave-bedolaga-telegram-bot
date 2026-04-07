@@ -414,13 +414,13 @@ class ChannelCheckerMiddleware(BaseMiddleware):
                             notification_text = texts.t(
                                 'SUBSCRIPTION_DEACTIVATED_CHANNEL_UNSUBSCRIBE_MULTI',
                                 '🚫 Ваши подписки приостановлены, так как вы отписались от обязательного канала.\n\n'
-                                'Подпишитесь на все каналы для восстановления доступа к VPN.',
+                                'Подпишитесь на все каналы для восстановления доступа.',
                             )
                         else:
                             notification_text = texts.t(
                                 'SUBSCRIPTION_DEACTIVATED_CHANNEL_UNSUBSCRIBE',
                                 '🚫 Ваша подписка приостановлена, так как вы отписались от канала.\n\n'
-                                'Подпишитесь на канал снова, чтобы восстановить доступ к VPN.',
+                                'Подпишитесь на канал снова, чтобы восстановить доступ.',
                             )
                         channel_kb = get_channel_sub_keyboard(normalized, language=user.language)
                         await bot.send_message(telegram_id, notification_text, reply_markup=channel_kb)
@@ -499,12 +499,12 @@ class ChannelCheckerMiddleware(BaseMiddleware):
                     if settings.is_multi_tariff_enabled() and len(disabled_subs) > 1:
                         notification_text = texts.t(
                             'SUBSCRIPTION_REACTIVATED_CHANNEL_SUBSCRIBE_MULTI',
-                            '✅ Ваши подписки восстановлены!\n\nСпасибо, что подписались на канал. VPN снова работает.',
+                            '✅ Ваши подписки восстановлены!\n\nСпасибо, что подписались на канал. Доступ снова активен.',
                         )
                     else:
                         notification_text = texts.t(
                             'SUBSCRIPTION_REACTIVATED_CHANNEL_SUBSCRIBE',
-                            '✅ Ваша подписка восстановлена!\n\nСпасибо, что подписались на канал. VPN снова работает.',
+                            '✅ Ваша подписка восстановлена!\n\nСпасибо, что подписались на канал. Доступ снова активен.',
                         )
                     await bot.send_message(telegram_id, notification_text)
                 except Exception as notify_error:

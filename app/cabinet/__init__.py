@@ -1,5 +1,5 @@
 """
-Cabinet module - Personal Account for VPN Bot users.
+Cabinet module - Personal Account for service users.
 
 This module provides:
 - JWT-based authentication (Telegram + Email)
