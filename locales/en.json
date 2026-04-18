@@ -1753,7 +1753,7 @@
   "WEBHOOK_DEVICE_ADDED": "📱 <b>New device</b>\n\nA new device has been added to your subscription: <code>{device}</code>",
   "WEBHOOK_DEVICE_DELETED": "📱 <b>Device removed</b>\n\nA device has been removed from your subscription: <code>{device}</code>",
   "WEBHOOK_CLOSE_BUTTON": "✖️ Close",
-  "MY_SUBSCRIPTIONS_BUTTON": "📱 My access",
+  "MY_SUBSCRIPTIONS_BUTTON": "📱 My subscriptions",
   "SUBSCRIPTION_DEACTIVATED_CHANNEL_UNSUBSCRIBE_MULTI": "🚫 Your access has been paused because you left a required channel.\n\nSubscribe to all channels to restore access.",
   "SUBSCRIPTION_REACTIVATED_CHANNEL_SUBSCRIBE_MULTI": "✅ Your access has been restored!\n\nThank you for subscribing to the channels. Access is active again.",
   "WEBHOOK_TORRENT_DETECTED": "🚫 <b>Torrent detected</b>\n\nTorrent traffic was detected on your connection{tariff_label}. Using torrents may result in access restrictions.",

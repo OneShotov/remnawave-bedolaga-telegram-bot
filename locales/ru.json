@@ -1774,7 +1774,7 @@
   "WEBHOOK_DEVICE_ADDED": "📱 <b>Новое устройство</b>\n\nК вашей подписке подключено новое устройство: <code>{device}</code>",
   "WEBHOOK_DEVICE_DELETED": "📱 <b>Устройство удалено</b>\n\nУстройство отключено от подписки: <code>{device}</code>",
   "WEBHOOK_CLOSE_BUTTON": "✖️ Закрыть",
-  "MY_SUBSCRIPTIONS_BUTTON": "📱 Мои доступы",
+  "MY_SUBSCRIPTIONS_BUTTON": "📱 Мои подписки",
   "SUBSCRIPTION_DEACTIVATED_CHANNEL_UNSUBSCRIBE_MULTI": "🚫 Ваши доступы приостановлены, так как вы отписались от обязательного канала.\n\nПодпишитесь на все каналы для восстановления доступа.",
   "SUBSCRIPTION_REACTIVATED_CHANNEL_SUBSCRIBE_MULTI": "✅ Ваши доступы восстановлены!\n\nСпасибо за подписку на каналы. Доступ снова активен.",
   "WEBHOOK_TORRENT_DETECTED": "🚫 <b>Обнаружен торрент</b>\n\nВ вашем подключении{tariff_label} обнаружен торрент-трафик. Использование торрентов может привести к ограничению доступа.",
